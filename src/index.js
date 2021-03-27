@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import firebase from 'firebase/app';
 import { Provider } from 'react-redux';
-import * as Sentry from '@sentry/browser';
 import App from './App';
 import './scss/index.scss';
 import store from './store';
@@ -19,10 +18,6 @@ const rrfProps = {
   config: rrfConfig,
   dispatch: store.dispatch
 };
-
-Sentry.init({
-  dsn: process.env.REACT_APP_SENTRY
-});
 
 ReactDOM.render(
   <Provider store={store}>
